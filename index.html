@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+    // Test localStorage availability:
+    let storage = false;
+    try {
+   // Unique id, probably not clashing with anything:
+   const uid = String(new Date);
+   localStorage.setItem(uid, uid);
+   storage = localStorage.getItem(uid) === uid;
+   localStorage.removeItem(uid);
+    } catch (e) {}
+    // Code conditional to localStorage availability:
+    document.body.append(storage? 'OK' : 'KO');
+    </script>
+</body>
+</html>
